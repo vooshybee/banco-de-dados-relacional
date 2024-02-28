@@ -1,0 +1,37 @@
+-- Criar banco de dados bd_sistema_bancario
+
+Create DATABASE bd_sistema_bancario;
+
+-- Criar 5 tabelas quaiquer
+
+Create TABLE salada;
+Create TABLE arroz;
+Create TABLE cavalos;
+Create TABLE feijao;
+Create TABLE carne;
+
+-- Criar tabelas conforme MER (Sistema Bancario):
+
+Create TABLE cliente(nome_cliente INTEGER, cidade_cliente varchar(100),endereco_cliente varchar(255));
+Create TABLE emprestimo(numero_emprestimo INTEGER, nome_agencia varchar(100),valor varchar(255));
+Create TABLE conta(numero_conta INTEGER, nome_agencia varchar(100),saldo varchar(255));
+Create TABLE agencia(nome_agencia INTEGER, cidade_agencia varchar(100),depositos varchar(255));
+
+-- Deletar as 5 tabelas criadas aleatoriamente
+
+Drop TABLE salada;
+Drop TABLE arroz;
+Drop TABLE cavalos;
+Drop TABLE feijao;
+Drop TABLE carne;
+
+-- alterar as tabelas conforme o MER atualizado
+
+ALTER TABLE cliente ADD COLUMN idade integer;
+ALTER TABLE cliente RENAME COLUMN idade TO idades;
+ALTER TABLE cliente DROP COLUMN idades;
+ALTER TABLE cliente rename to tblcliente;
+
+-- Criar um esquema com o seu nome
+
+Create SCHEMA Vitor;
